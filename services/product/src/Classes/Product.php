@@ -13,10 +13,10 @@ class Product
         return $repository->changeVisibility($productKey, $visibility);
     }
 
-    public function exists($productKey): bool
+    public function exists($productKey, $visibility = null): bool
     {
         /** @var ProductRepository $repository */
         $repository = app(ProductRepository::class);
-        return $repository->exists($productKey);
+        return $repository->exists($productKey, $visibility);
     }
 }

@@ -4,6 +4,7 @@ namespace Services\Review\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\ValidationException;
+use Services\Product\Constants\VisibilityValues;
 use Services\Product\Facades\Product;
 use Services\Review\Constants\CommentableStatuses;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,7 +36,7 @@ class CommentableRequest extends FormRequest
 
     protected function passedValidation()
     {
-        if(!Product::exists($this->get('product_id'))) {
+        if(!Product::exists($this->get('product_id'), VisibilityValues::VISIBLE)) {
             $content = json_encode(['message' => 'product does not exists!']);
             throw new ValidationException($this->validator, new Response($content, 422, ['Content-type' => 'application/json']));
         }

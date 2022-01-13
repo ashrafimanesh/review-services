@@ -24,8 +24,12 @@ class ProductRepository
         return Product::where('id', $key)->update(['visibility' => $visibility]);
     }
 
-    public function exists($key): bool
+    public function exists($key, $visibility = null): bool
     {
-        return Product::where('id', $key)->exists();
+        $query = Product::where('id', $key);
+        if (!is_null($visibility)) {
+            $query = $query->whereVisibility($visibility);
+        }
+        return $query->exists();
     }
 }
