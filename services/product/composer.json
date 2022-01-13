@@ -1,0 +1,33 @@
+{
+    "name": "services/product",
+    "description": "A service to provider order features for a product",
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/database": "^7.0|^8.0",
+        "illuminate/contracts": "^7.0|^8.0",
+        "services/review" : "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Services\\Product\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Services\\ProductTests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Services\\Product\\ProductServiceProvider"
+            ],
+            "aliases": {
+            }
+        },
+        "branch-alias": {
+        }
+    }
+}

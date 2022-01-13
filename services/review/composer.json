@@ -1,0 +1,34 @@
+{
+    "name": "services/review",
+    "description": "A service to provider comment and vote features for a product",
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/database": "^7.0|^8.0",
+        "illuminate/contracts": "^7.0|^8.0",
+        "services/product" : "*",
+        "services/shop" : "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Services\\Review\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Services\\ReviewTests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Services\\Review\\ReviewServiceProvider"
+            ],
+            "aliases": {
+            }
+        },
+        "branch-alias": {
+        }
+    }
+}

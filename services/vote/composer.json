@@ -1,0 +1,40 @@
+{
+    "name": "services/vote",
+    "description": "A service to provider vote features for a product",
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/database": "^7.0|^8.0",
+        "illuminate/routing": "^7.0|^8.0",
+        "illuminate/contracts": "^7.0|^8.0",
+        "services/review": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Services\\Vote\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Services\\VoteTests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Services\\Vote\\VoteServiceProvider"
+            ],
+            "aliases": {
+            }
+        },
+        "branch-alias": {
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../services/review"
+        }
+    ]
+}

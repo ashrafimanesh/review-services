@@ -1,0 +1,32 @@
+{
+    "name": "services/shop",
+    "description": "A service to provider order features for a product",
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/database": "^7.0|^8.0",
+        "illuminate/contracts": "^7.0|^8.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Services\\Shop\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Services\\ShopTests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Services\\Shop\\ShopServiceProvider"
+            ],
+            "aliases": {
+            }
+        },
+        "branch-alias": {
+        }
+    }
+}
